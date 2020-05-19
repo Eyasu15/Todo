@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<style>
+.position {
+}
+</style>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12"></div>
+			     <div class="col-md-12 text-center">
+			        <form class="text-center border border-light p-5" action="#" th:action="@{/add/save}" th:object="${todo}" method="post">			            			              
+		                <h2>Add</h2>
+						<div class="row d-flex justify-content-center">
+							<table>
+								<tr>
+									<td>Description</td>
+									<td><input type="text" th:field="*{description}" required="true"/></td>
+									<td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</td>
+								</tr>
+									<td><label>Target Date</label></td>
+									<td><input type="date" th:field="*{targetDate}" required="true"/></td>
+									<td th:if="${#fields.hasErrors('targetDate')}" th:errors="*{targetDate}">Target Date Error</td>
+							</table>
+						</div>
+		                <div>
+		                    <button class="btn btn-info btn-block my-4" type="submit">Submit</button>
+		                </div>	             
+			        </form>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
+
+

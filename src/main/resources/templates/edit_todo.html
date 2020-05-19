@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12"></div>
+			     <div class="col-md-12 text-center">
+					
+				<div>
+					<form class="text-center border border-light p-5" method="post" action="#" th:action="@{/edit/save}" th:object="${todo}">
+						<h2>Edit</h2>
+						<p>Description  <input type="text" th:field="*{description}"> </p>
+						<p>Target Date  <input type="date" th:field="*{targetDate}"> </p>
+						<input type="hidden" th:field="*{id}" th:value="id">
+						<button class="btn btn-info btn-block my-4" type="submit">Save</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
